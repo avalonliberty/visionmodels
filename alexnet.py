@@ -2,6 +2,10 @@ import torch
 import torch.nn as nn
 
 class AlexNet(nn.Module):
+    '''
+    Pytorch implementation of alexnet
+    ImageNet Classification with Deep Convolutional Neural Networks<https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf>
+    '''
 
     def __init__(self):
         super(AlexNet, self).__init__()
@@ -48,6 +52,7 @@ class AlexNet(nn.Module):
         x = torch.flatten(x, 1)
         # n x 9216
         x = self.classifier(x)
+        # n x 1000
 
         return x
 
